@@ -9,7 +9,7 @@ from . import get_config
 
 logger = logging.getLogger("real_estate_scraper")
 
-def method_none():
+def method_none(c_name, c_data):
     logger.info("No method found to handle request.")
     return []
 
