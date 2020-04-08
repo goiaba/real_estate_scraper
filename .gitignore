@@ -1,0 +1,5 @@
+doc
+data
+cron_executor.sh
+real_estate_scraper/__pycache__
+real_estate_scraper/sendgrid.env

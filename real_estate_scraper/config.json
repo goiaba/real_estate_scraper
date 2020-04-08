@@ -1,0 +1,186 @@
+{
+  "conf": {
+    "logging": {
+      "config_file_path": "logging.ini"
+    },
+    "result_filename_date_format": "%Y-%m-%d_%H:%M:%S",
+    "view_date_format": "%H:%M:%S (%d-%m-%Y)",
+    "max_workers": 8,
+    "email": {
+      "enabled": true,
+      "subject": "Relatório de atualização de imóveis (Americana/SBO)",
+      "from_email": "",
+      "to_emails": [""],
+      "template_name": "atualizacao_de_imoveis.html"
+    }
+  },
+  "headers": {
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+  },
+  "companies": {
+    "feola": {
+      "enabled": true,
+      "base_url": "https://www.feola.com.br",
+      "query_str": "api/listings/para-alugar/casa/americana+santa-barbara-d-oeste?pagina",
+      "start_page": 1,
+      "result_list_name": "data",
+      "content-type": "application/json",
+      "method": "one"
+    },
+    "coradiniimoveis": {
+      "enabled": true,
+      "base_url": "https://www.coradiniimoveis.com.br",
+      "query_str": "api/listings/para-alugar/casa/americana+santa-barbara-d-oeste?pagina",
+      "start_page": 1,
+      "result_list_name": "data",
+      "method": "one"
+    },
+    "absolutaimobiliaria": {
+      "enabled": true,
+      "base_url": "https://www.absolutaimobiliaria.com.br",
+      "query_str": "api/listings/para-alugar/casa/americana+santa-barbara-d-oeste?pagina",
+      "start_page": 1,
+      "result_list_name": "data",
+      "method": "one"
+    },
+    "wpaimoveis": {
+      "enabled": true,
+      "base_url": "https://www.wpaimoveis.com.br",
+      "query_str": "api/listings/para-alugar/casa/americana+santa-barbara-d-oeste?pagina",
+      "start_page": 1,
+      "result_list_name": "data",
+      "method": "one"
+    },
+    "marcosferreiraimoveis": {
+      "enabled": true,
+      "base_url": "https://www.marcosferreiraimoveis.com.br",
+      "query_str": "api/listings/para-alugar/casa/americana+santa-barbara-d-oeste?pagina",
+      "start_page": 1,
+      "result_list_name": "data",
+      "method": "one"
+    },
+    "bispoimovel": {
+      "enabled": true,
+      "base_url": "http://www.bispoimovel.com.br",
+      "query_str": "imoveis/para-alugar/casa/americana+santa-barbara-d-oeste?pagina",
+      "start_page": 1,
+      "result_search_string": "/imovel/",
+      "method": "two"
+    },
+    "imobiliariaurbes": {
+      "enabled": true,
+      "base_url": "https://www.imobiliariaurbes.com.br",
+      "query_str": "imoveis/para-alugar/casa/americana+santa-barbara-d-oeste?pagina",
+      "start_page": 1,
+      "result_search_string": "/imovel/",
+      "method": "two"
+    },
+    "imobiliariaimperium": {
+      "enabled": true,
+      "base_url": "https://www.imobiliariaimperium.com.br",
+      "query_str": "imoveis/para-alugar/casa/americana+santa-barbara-d-oeste?pagina",
+      "start_page": 1,
+      "result_search_string": "/imovel/",
+      "method": "two"
+    },
+    "afortalezaimoveis": {
+      "enabled": true,
+      "base_url": "http://www.afortalezaimoveis.com.br",
+      "query_str": "imoveis/para-alugar/casa/americana+santa-barbara-d-oeste?pagina",
+      "start_page": 1,
+      "result_search_string": "/imovel/",
+      "method": "two"
+    },
+    "messiasimoveis": {
+      "enabled": true,
+      "base_url": "http://messiasimoveis.net",
+      "query_str": "imoveis/alugar/casa/null/sp/americana-santa+barbara+d%27oeste/null?page",
+      "start_page": 0,
+      "prepend_base_url_in_search": true,
+      "result_search_string": "imovel/",
+      "method": "two"
+    },
+    "boldrini": {
+      "enabled": true,
+      "base_url": "https://boldrini.net.br",
+      "query_str": "imoveis/alugar/casa/null/sp/americana-santa+barbara+d%27oeste/null?page",
+      "start_page": 0,
+      "prepend_base_url_in_search": true,
+      "result_search_string": "imovel/",
+      "method": "two"
+    },
+    "imobiliariamatsui": {
+      "enabled": true,
+      "base_url": "https://imobiliariamatsui.com.br",
+      "query_str": "imoveis?codigo=&operacao=Locação&tipo[]=Casa&cidadebairro[]=Americana/SP&cidadebairro[]=Santa%20Bárbara%20D%27Oeste/SP&valorMinimo=&valorMaximo=&areatotal[]=&areatotal[]=&page",
+      "start_page": 0,
+      "prepend_base_url_in_search": true,
+      "result_search_string": "imovel/",
+      "method": "two"
+    },
+    "tortamanoimoveis": {
+      "enabled": true,
+      "base_url": "http://tortamanoimoveis.com.br",
+      "query_str": "imoveis?codigo=&operacao=Locação&tipo[]=Casa&cidadebairro[]=Americana/SP&cidadebairro[]=Santa%20Bárbara%20D%27Oeste/SP&valorMinimo=&valorMaximo=&areatotal[]=&areatotal[]=&page",
+      "start_page": 0,
+      "prepend_base_url_in_search": true,
+      "result_search_string": "imovel/",
+      "method": "two"
+    },
+    "arbix": {
+      "enabled": true,
+      "base_url": "https://www.arbix.com.br",
+      "query_str": "pesquisa-de-imoveis/locacao_venda=L&id_cidade[]=2&id_cidade[]=5&id_tipo_imovel[]=10&id_tipo_imovel[]=12&id_tipo_imovel[]=13&finalidade=residencial&dormitorio=0&garagem=0&vmi=&vma=&&pag",
+      "start_page": 1,
+      "result_search_string": "alugar/",
+      "charset": "iso-8859-1",
+      "method": "two"
+    },
+    "aresimoveis": {
+      "enabled": true,
+      "base_url": "https://www.aresimoveis.com.br",
+      "query_str": "alugar/sp/santa-barbara-d'oeste_americana/casa/valor-min_0/area-min_0/ordem-valor/resultado-crescente/quantidade-12/pagina",
+      "start_page": 1,
+      "result_search_string": "/alugar/sp/americana,/alugar/sp/santa-barbara-doeste",
+      "page_param_separator": "-",
+      "method": "two"
+    },
+    "imobiliariasaobernardo": {
+      "enabled": true,
+      "base_url": "https://www.imobiliariasaobernardo.com.br",
+      "query_str": "imoveis?operacao=Loca%C3%A7%C3%A3o&tipo%5B%5D=Casa&cidadebairro%5B%5D=Americana%2FSP&cidadebairro%5B%5D=Santa+B%C3%A1rbara+D%27Oeste%2FSP&page",
+      "start_page": 0,
+      "prepend_base_url_in_search": true,
+      "result_search_string": "/imovel/",
+      "method": "two"
+    },
+    "armond": {
+      "enabled": true,
+      "base_url": "https://armond.com.br",
+      "query_str": "alugar/casa/americana/sp?ordenacao=crescente&finalidade=residencial&pag",
+      "start_page": 1,
+      "method": "three"
+    },
+    "acapulcoimoveis": {
+      "enabled": true,
+      "base_url": "https://www.acapulcoimoveis.com.br",
+      "query_str": "aluguelAjax/aluguel/casa/americana/todos-os-bairros/1-quartos/1-vaga-ou-mais/1-banheiro-ou-mais/?valorminimo=0&valormaximo=0&pagina",
+      "start_page": 1,
+      "result_list_name": "lista",
+      "method": "four"
+    },
+    "defariaimoveis": {
+      "enabled": true,
+      "base_url": "https://www.defariaimoveis.com.br",
+      "query_str": "imoveis/ajax/",
+      "body": "imovel%5Bfinalidade%5D=aluguel&imovel%5Bcodigounidade%5D=&imovel%5Bcodigosimoveis%5D=&imovel%5BcodigoTipo%5D%5Bcodigo%5D%5B%5D=1&imovel%5BcodigoTipo%5D%5Bnome%5D%5B%5D=casa&imovel%5Bcodigocidade%5D=1&imovel%5Bcodigoregiao%5D=0&imovel%5Bcodigosbairros%5D%5Bnome%5D=0&imovel%5Bcodigosbairros%5D%5Bcodigo%5D=0&imovel%5Bendereco%5D=0&imovel%5Bnumeroquartos%5D=0-quartos&imovel%5Bnumerovagas%5D=0-vaga-ou-mais&imovel%5Bnumerobanhos%5D=0-banheiro-ou-mais&imovel%5Bnumerosuite%5D=0-suite-ou-mais&imovel%5Bnumerovaranda%5D=0&imovel%5Bnumeroelevador%5D=0&imovel%5Bvalorde%5D=0&imovel%5Bvalorate%5D=0&imovel%5Bareade%5D=0&imovel%5Bareaate%5D=0&imovel%5Bextras%5D=0&imovel%5Bextends%5D=false&imovel%5Bmobiliado%5D=false&imovel%5Bdce%5D=false&imovel%5Bpiscina%5D=false&imovel%5Bsauna%5D=false&imovel%5Bsalaofestas%5D=false&imovel%5Bacademia%5D=false&imovel%5BboxDespejo%5D=false&imovel%5Bportaria24h%5D=false&imovel%5Baceitafinanciamento%5D=false&imovel%5Barealazer%5D=false&imovel%5Bquartoqtdeexata%5D=false&imovel%5Bvagaqtdexata%5D=false&imovel%5Bdestaque%5D=0&imovel%5Bopcaoimovel%5D=4&imovel%5Bretornomapa%5D=false&imovel%5Bretornomapaapp%5D=false&imovel%5Bnumeropagina%5D=1&imovel%5Bnumeroregistros%5D=20&imovel%5Bordenacao%5D=&imovel%5Baceitapermuta%5D=false&imovel%5Bpagina%5D",
+      "start_page": 1,
+      "result_list_name": "lista",
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+      },
+      "http_method": "POST",
+      "method": "five"
+    }
+  }
+}

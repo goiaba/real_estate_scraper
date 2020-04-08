@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h2>Relatório de atualização de imóveis disponíveis em {{ context.current_check_time }}</h2>
+    <p>Comparação efetuada com os dados obtidos em {{ context.previous_check_time }}</p>
+    <h3>Total de imóveis consultados: {{ context.total }}</h3>
+    {%- if context.added %}
+    <h3>Imóveis adicionados desde a última checagem</h3>
+    <ul>
+      {%- for url in context.added %}
+      <li><a href="{{ url }}">{{ url }}</a></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+    {%- if context.removed %}
+    <h3>Imóveis removidos desde a última checagem</h3>
+    <ul>
+      {%- for url in context.removed %}
+      <li><a href="{{ url }}">{{ url }}</a></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+  </body>
+</html>
