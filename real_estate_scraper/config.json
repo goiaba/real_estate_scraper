@@ -24,7 +24,6 @@
       "query_str": "api/listings/para-alugar/casa/americana+santa-barbara-d-oeste?pagina",
       "start_page": 1,
       "result_list_name": "data",
-      "content-type": "application/json",
       "method": "one"
     },
     "coradiniimoveis": {
@@ -205,7 +204,6 @@
       "headers": {
         "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
       },
-      "http_method": "POST",
       "method": "five"
     }
   }
