@@ -46,7 +46,7 @@ def write_house_links_to_disk(data, start_time):
 def send_email(total: int, added: set, removed: set, previous_check_time: datetime, current_check_time: datetime):
     if get_config("conf:email:enabled"):
         if not get_config("conf:email:to_emails", None):
-            print("Add emails to \"conf.email.to_emails\" in order to send the list by email")
+            logger.warning("Add emails to \"conf.email.to_emails\" in order to send the list by email")
             exit(0)
         context = {
             "added": added,
