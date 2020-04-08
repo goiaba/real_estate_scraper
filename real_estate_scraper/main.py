@@ -89,4 +89,4 @@ if __name__ == "__main__":
         spent_time = end_time - current_check_time
         logger.info("Real estate scraper execution ended at %s (%s)", to_view_date_format(end_time), spent_time)
     else:
-        logger.warn("No house links retrieved.")
+        logger.warning("No house links retrieved.")
