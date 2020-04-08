@@ -59,6 +59,14 @@
       "result_list_name": "data",
       "method": "one"
     },
+    "castrogarcia": {
+      "enabled": true,
+      "base_url": "https://www.castrogarcia.com.br",
+      "query_str": "api/listings/para-alugar/casa/americana+santa-barbara-d-oeste?pagina",
+      "start_page": 1,
+      "result_list_name": "data",
+      "method": "one"
+    },
     "bispoimovel": {
       "enabled": true,
       "base_url": "http://www.bispoimovel.com.br",
