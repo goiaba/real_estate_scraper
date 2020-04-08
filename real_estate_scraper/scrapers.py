@@ -9,18 +9,18 @@ from . import get_config
 
 logger = logging.getLogger("real_estate_scraper")
 
-def method_none(c_name, c_data):
+def method_none(a_name, a_data):
     logger.info("No method found to handle request.")
     return []
 
-def method_one_four(c_name, c_data, result_map_func):
+def method_one_four(a_name, a_data, result_map_func):
     headers = get_config("headers")
-    base_url = c_data.get("base_url")
-    page = c_data.get("start_page")
-    result_list_name = c_data.get("result_list_name")
+    base_url = a_data.get("base_url")
+    page = a_data.get("start_page")
+    result_list_name = a_data.get("result_list_name")
     house_set = set([])
     while True:
-        url = "%s/%s=%i" % (c_data.get("base_url"), c_data.get("query_str"), page)
+        url = "%s/%s=%i" % (a_data.get("base_url"), a_data.get("query_str"), page)
         logger.debug("Requesting '%s'" % url)
         response = requests.get(url, headers=headers)
         houses = response.json()
@@ -30,23 +30,23 @@ def method_one_four(c_name, c_data, result_map_func):
         time.sleep(1)
     return list(house_set)
 
-def method_one(c_name, c_data):
-    base_url = c_data.get("base_url")
-    return method_one_four(c_name, c_data, lambda e: "%s%s" % (base_url, e.get("url")))
+def method_one(a_name, a_data):
+    base_url = a_data.get("base_url")
+    return method_one_four(a_name, a_data, lambda e: "%s%s" % (base_url, e.get("url")))
 
-def method_four(c_name, c_data):
-    base_url = c_data.get("base_url")
-    return method_one_four(c_name, c_data, lambda e: "%s/imoveis/%s" % (base_url, e.get("codigo")))
+def method_four(a_name, a_data):
+    base_url = a_data.get("base_url")
+    return method_one_four(a_name, a_data, lambda e: "%s/imoveis/%s" % (base_url, e.get("codigo")))
 
-def method_five(c_name, c_data):
-    headers = { **get_config("headers"), **c_data.get("headers", {}) }
-    base_url = c_data.get("base_url")
-    page = c_data.get("start_page")
+def method_five(a_name, a_data):
+    headers = { **get_config("headers"), **a_data.get("headers", {}) }
+    base_url = a_data.get("base_url")
+    page = a_data.get("start_page")
     house_set = set([])
-    url = "%s/%s" % (base_url, c_data.get("query_str"))
+    url = "%s/%s" % (base_url, a_data.get("query_str"))
     while True:
         logger.debug("Requesting '%s' (POST page %i)" % (url, page))
-        body = "%s=%i" % (c_data.get("body"), page)
+        body = "%s=%i" % (a_data.get("body"), page)
         response = requests.post(url, data = body, headers=headers)
         houses = response.json()
         if not houses.get('lista', None): break
@@ -55,21 +55,21 @@ def method_five(c_name, c_data):
         time.sleep(1)
     return list(house_set)
 
-def method_two(c_name, c_data):
+def method_two(a_name, a_data):
     headers = get_config("headers")
     parser = etree.HTMLParser()
-    base_url = c_data.get("base_url")
-    prepend_base_url_in_search = c_data.get("prepend_base_url_in_search", False)
-    result_search_string = tuple(map(str, c_data.get("result_search_string").split(",")))
-    charset = c_data.get("charset", "utf-8")
-    page = c_data.get("start_page")
-    pagination = c_data.get("pagination", True)
-    page_param_separator = c_data.get("page_param_separator", "=")
+    base_url = a_data.get("base_url")
+    prepend_base_url_in_search = a_data.get("prepend_base_url_in_search", False)
+    result_search_string = tuple(map(str, a_data.get("result_search_string").split(",")))
+    charset = a_data.get("charset", "utf-8")
+    page = a_data.get("start_page")
+    pagination = a_data.get("pagination", True)
+    page_param_separator = a_data.get("page_param_separator", "=")
     if prepend_base_url_in_search:
         result_search_string = tuple(map(lambda e: urljoin(base_url, e), result_search_string))
     house_set = set([])
     while True:
-        url = "%s/%s" % (base_url, c_data.get("query_str"))
+        url = "%s/%s" % (base_url, a_data.get("query_str"))
         if pagination:
             url = "%s%s%i" % (url, page_param_separator, page)
         logger.debug("Requesting '%s'" % url)
@@ -90,14 +90,14 @@ def method_two(c_name, c_data):
         time.sleep(1)
     return list(house_set)
 
-def method_three(c_name, c_data):
+def method_three(a_name, a_data):
     headers = get_config("headers")
     parser = etree.HTMLParser()
-    base_url = c_data.get("base_url")
-    page = c_data.get("start_page")
+    base_url = a_data.get("base_url")
+    page = a_data.get("start_page")
     house_set = set([])
     while True:
-        url = "%s/%s=%i" % (c_data.get("base_url"), c_data.get("query_str"), page)
+        url = "%s/%s=%i" % (a_data.get("base_url"), a_data.get("query_str"), page)
         logger.debug("Requesting '%s'" % url)
         response = requests.get(url, headers=headers)
         html = response.content.decode("utf-8")
