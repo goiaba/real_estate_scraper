@@ -63,12 +63,15 @@ def method_two(c_name, c_data):
     result_search_string = tuple(map(str, c_data.get("result_search_string").split(",")))
     charset = c_data.get("charset", "utf-8")
     page = c_data.get("start_page")
+    pagination = c_data.get("pagination", True)
     page_param_separator = c_data.get("page_param_separator", "=")
     if prepend_base_url_in_search:
         result_search_string = tuple(map(lambda e: urljoin(base_url, e), result_search_string))
     house_set = set([])
     while True:
-        url = "%s/%s%s%i" % (base_url, c_data.get("query_str"), page_param_separator, page)
+        url = "%s/%s" % (base_url, c_data.get("query_str"))
+        if pagination:
+            url = "%s%s%i" % (url, page_param_separator, page)
         logger.debug("Requesting '%s'" % url)
         response = requests.get(url, headers=headers)
         html = response.content.decode(charset)
@@ -82,6 +85,7 @@ def method_two(c_name, c_data):
                 links.add(sanitized_link)
         if not links: break
         house_set.update(links)
+        if not pagination: break
         page += 1
         time.sleep(1)
     return list(house_set)
