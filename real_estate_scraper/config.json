@@ -162,6 +162,24 @@
       "result_search_string": "/imovel/",
       "method": "two"
     },
+    "portosegimoveis-americana": {
+      "enabled": true,
+      "base_url": "https://www.portosegimoveis.com.br",
+      "query_str": "search.html?pretensao=alugar&cidade=Americana&tipo=Casa&formulario=param",
+      "result_search_string": "/imovel/",
+      "pagination": false,
+      "prepend_base_url_in_search": true,
+      "method": "two"
+    },
+    "portosegimoveis-sbo": {
+      "enabled": true,
+      "base_url": "https://www.portosegimoveis.com.br",
+      "query_str": "search.html?pretensao=alugar&cidade=Santa+Bárbara+D%5C%27Oeste&tipo=Casa&formulario=param",
+      "result_search_string": "/imovel/",
+      "pagination": false,
+      "prepend_base_url_in_search": true,
+      "method": "two"
+    },
     "armond": {
       "enabled": true,
       "base_url": "https://armond.com.br",
