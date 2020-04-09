@@ -6,11 +6,12 @@
     "result_filename_date_format": "%Y-%m-%d_%H:%M:%S",
     "view_date_format": "%H:%M:%S (%d-%m-%Y)",
     "max_workers": 8,
+    "data_directory": "data",
     "email": {
       "enabled": true,
       "subject": "Relatório de atualização de imóveis (Americana/SBO)",
       "from_email": "",
-      "to_emails": [""],
+      "to_emails": [],
       "template_name": "atualizacao_de_imoveis.html"
     }
   },

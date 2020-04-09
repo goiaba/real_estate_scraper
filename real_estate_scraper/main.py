@@ -4,7 +4,7 @@ from datetime import datetime
 import concurrent.futures
 
 from . import get_config
-from .utils import read_house_links_from_disk, write_house_links_to_disk, send_email, to_view_date_format
+from .utils import read_from_disk, write_to_disk, send_email, to_view_date_format
 from .scrapers import method_none, method_one, method_two, method_three, method_four, method_five
 import logging
 
@@ -52,7 +52,7 @@ def log_ignored_agencies(house_links: dict, previous_house_links: dict):
     for a_name in old_agencies_been_ignored:
         logger.info("'%s' agency is been ignored since it does not exists in the current agencies list. It will be taken into account in the next execution.", a_name)
 
-def get_added_house_links(house_links: dict, previous_house_links: dict) -> set:
+def filter_added_house_links(house_links: dict, previous_house_links: dict) -> set:
     log_ignored_agencies(house_links, previous_house_links)
     added_house_links = set([])
     agencies = set(house_links.keys()).intersection(set(previous_house_links.keys()))
@@ -61,7 +61,7 @@ def get_added_house_links(house_links: dict, previous_house_links: dict) -> set:
         added_house_links.update(set(house_links.get(a_name)).difference(set(previous_house_links.get(a_name))))
     return added_house_links
 
-def get_removed_house_links(house_links: dict, previous_house_links: dict) -> set:
+def filter_removed_house_links(house_links: dict, previous_house_links: dict) -> set:
     removed_house_links = set([])
     agencies = set(house_links.keys()).intersection(set(previous_house_links.keys()))
     for a_name in agencies:
@@ -72,12 +72,12 @@ def get_removed_house_links(house_links: dict, previous_house_links: dict) -> se
 if __name__ == "__main__":
     current_check_time = datetime.now()
     logger.info("Real estate scraper execution started at %s", to_view_date_format(current_check_time))
-    (total_house_links, house_links) = get_house_links()
-    (previous_check_time, previous_house_links) = read_house_links_from_disk()
-    write_house_links_to_disk(house_links, current_check_time)
+    (total_house_links, current_house_links) = get_house_links()
+    (previous_check_time, previous_house_links) = read_from_disk()
+    write_to_disk(current_house_links, current_check_time)
     if total_house_links > 0:
-        added_house_links = get_added_house_links(house_links, previous_house_links)
-        removed_house_links = get_removed_house_links(house_links, previous_house_links)
+        added_house_links = filter_added_house_links(current_house_links, previous_house_links)
+        removed_house_links = filter_removed_house_links(current_house_links, previous_house_links)
         logger.info("Total house links retrieved: %i", total_house_links)
         logger.info("Added house links")
         for l in added_house_links: logger.info(l)

@@ -11,36 +11,20 @@ from sendgrid.helpers.mail import Mail
 
 logger = logging.getLogger("real_estate_scraper")
 
-def _date_format(dt: datetime, format: str) -> str:
-    return dt.strftime(format)
-
 def to_view_date_format(dt: datetime) -> str:
     return _date_format(dt, get_config("conf:view_date_format"))
 
-def to_filename_date_format(dt: datetime) -> str:
-    return _date_format(dt, get_config("conf:result_filename_date_format"))
-
-def get_previous_check_time_from_filename(filename: str) -> datetime:
-    fixed_slice_to_remove = "data/houses_"
-    str_datetime = filename.replace(fixed_slice_to_remove, "")
-    return datetime.strptime(str_datetime, get_config("conf:result_filename_date_format"))
-
-def get_new_filename(start_time: datetime) -> str:
-    return "data/houses_%s" % to_filename_date_format(start_time)
-
-def get_last_filename() -> str:
-    files = glob.glob("data/*")
-    return None if not files else reduce(lambda e, a: e if e > a else a, files)
-
-def read_house_links_from_disk() -> (datetime, dict):
-    filename = get_last_filename()
+def read_from_disk() -> (datetime, dict):
+    filename = _get_previous_check_filename()
     if not filename: return (None, dict())
     with open(filename, "r") as json_file:
-        return (get_previous_check_time_from_filename(filename), json.load(json_file))
+        return (_get_previous_check_time_from_filename(filename), json.load(json_file))
 
-def write_house_links_to_disk(data, start_time):
-    filename = get_new_filename(start_time)
-    with open(filename, 'w') as json_file:
+def write_to_disk(data: dict, start_time: datetime):
+    data_dir = get_config("conf:data_directory", "data")
+    if not os.path.isdir(data_dir): os.makedirs(data_dir)
+    filename = "%s/%s" % (data_dir, _get_current_check_filename(start_time))
+    with open(filename, "w") as json_file:
         json.dump(data, json_file, indent=4, sort_keys=True)
 
 def send_email(total: int, added: set, removed: set, previous_check_time: datetime, current_check_time: datetime):
@@ -70,3 +54,23 @@ def send_email(total: int, added: set, removed: set, previous_check_time: dateti
             logger.info("Email with link updates sent to [%s]", ", ".join(get_config("conf:email:to_emails")))
         except Exception as e:
             logger.exception("An error occured while trying to send the email.")
+
+def _date_format(dt: datetime, format: str) -> str:
+    return dt.strftime(format)
+
+def _to_filename_date_format(dt: datetime) -> str:
+    return _date_format(dt, get_config("conf:result_filename_date_format"))
+
+def _get_previous_check_time_from_filename(filename: str) -> datetime:
+    data_dir = get_config("conf:data_directory", "data")
+    fixed_slice_to_remove = "%s/houses_" % data_dir
+    str_datetime = filename.replace(fixed_slice_to_remove, "")
+    return datetime.strptime(str_datetime, get_config("conf:result_filename_date_format"))
+
+def _get_current_check_filename(start_time: datetime) -> str:
+    return "houses_%s" % (_to_filename_date_format(start_time))
+
+def _get_previous_check_filename() -> str:
+    data_dir = get_config("conf:data_directory", "data")
+    files = glob.glob("%s/*" % data_dir)
+    return None if not files else reduce(lambda e, a: e if e > a else a, files)
