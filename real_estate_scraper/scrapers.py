@@ -70,6 +70,30 @@ def method_five(a_name, a_data):
     return list(house_set)
 
 
+def method_six(a_name, a_data):
+    headers = {**get_config("headers"), **a_data.get("headers", {})}
+    x_domain = headers.get("x-domain", None)
+    base_url = a_data.get("base_url")
+    page = a_data.get("start_page")
+    page_size = a_data.get("page_size")
+    house_set = set([])
+    while True:
+        url = "%s/%s=%i" % (base_url, a_data.get("query_str"), page)
+        logger.debug("Requesting '%s'" % url)
+        response = requests.get(url, headers=headers)
+        houses = response.json()
+        if not houses.get("search", {}).get("result", {}).get("listings", []):
+            break
+        house_set.update(
+            map(
+                lambda e: "%s%s" % (x_domain if x_domain else base_url,
+                                    e.get("link", {}).get("href", None)),
+                houses.get("search").get("result").get("listings")))
+        page += page_size
+        time.sleep(1)
+    return list(house_set)
+
+
 def method_two(a_name, a_data):
     headers = get_config("headers")
     parser = etree.HTMLParser()

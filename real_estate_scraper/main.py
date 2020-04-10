@@ -7,7 +7,7 @@ from . import get_config
 from .utils import read_from_disk, write_to_disk
 from .utils import send_email, to_view_date_format
 from .scrapers import method_none, method_one, method_two
-from .scrapers import method_three, method_four, method_five
+from .scrapers import method_three, method_four, method_five, method_six
 import logging
 
 logger = logging.getLogger("real_estate_scraper")
@@ -18,7 +18,8 @@ method_dispatcher = {
     "two": method_two,
     "three": method_three,
     "four": method_four,
-    "five": method_five
+    "five": method_five,
+    "six": method_six
 }
 
 

@@ -187,6 +187,18 @@
       "start_page": 1,
       "method": "three"
     },
+    "vivareal": {
+      "enabled": true,
+      "base_url": "https://glue-api.vivareal.com",
+      "query_str": "v2/listings?addressCity=Americana%2CSanta%20B%C3%A1rbara%20D%20Oeste&addressLocationId=BR%3ESao%20Paulo%3ENULL%3EAmericana%2CBR%3ESao%20Paulo%3ENULL%3ESanta%20Barbara%20D%20Oeste&addressNeighborhood=%2C&addressState=S%C3%A3o%20Paulo%2CS%C3%A3o%20Paulo&addressCountry=Brasil%2CBR&addressStreet=%2C&addressZone=%2C&addressPointLat=-22.737889%2C-22.755742&addressPointLon=-47.33369%2C-47.414758&business=RENTAL&facets=amenities&unitTypes=HOME%2CHOME%2CCOUNTRY_HOUSE&unitSubTypes=UnitSubType_NONE%2CSINGLE_STOREY_HOUSE%2CVILLAGE_HOUSE%2CKITNET%7CCONDOMINIUM%7CUnitSubType_NONE&unitTypesV3=HOME%2CCONDOMINIUM%2CCOUNTRY_HOUSE&usageTypes=RESIDENTIAL%2CRESIDENTIAL%2CRESIDENTIAL&priceMin=1200&priceMax=2400&listingType=USED&parentId=null&categoryPage=RESULT&includeFields=page%2Csearch%2Cexpansion%2Cnearby%2CfullUriFragments%2Caccount%2Cboosted&size=36&q=&developmentsSize=5&__vt=&sort=pricingInfos.price%20DESC%20sortFilter%3ApricingInfos.businessType%3D%27RENTAL%27&from",
+      "start_page": 1,
+      "result_list_name": "search.result.listings",
+      "page_size": 36,
+      "headers": {
+        "x-domain": "www.vivareal.com.br"
+      },
+      "method": "six"
+    },
     "acapulcoimoveis": {
       "enabled": true,
       "base_url": "https://www.acapulcoimoveis.com.br",
