@@ -53,7 +53,6 @@ def log_ignored_agencies(house_links: dict, previous_house_links: dict):
         logger.info("'%s' agency is been ignored since it does not exists in the current agencies list. It will be taken into account in the next execution.", a_name)
 
 def filter_added_house_links(house_links: dict, previous_house_links: dict) -> set:
-    log_ignored_agencies(house_links, previous_house_links)
     added_house_links = set([])
     agencies = set(house_links.keys()).intersection(set(previous_house_links.keys()))
     for a_name in agencies:
@@ -76,6 +75,7 @@ if __name__ == "__main__":
     (previous_check_time, previous_house_links) = read_from_disk()
     write_to_disk(current_house_links, current_check_time)
     if total_house_links > 0:
+        log_ignored_agencies(current_house_links, previous_house_links)
         added_house_links = filter_added_house_links(current_house_links, previous_house_links)
         removed_house_links = filter_removed_house_links(current_house_links, previous_house_links)
         logger.info("Total house links retrieved: %i", total_house_links)
