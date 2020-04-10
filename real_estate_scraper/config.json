@@ -120,7 +120,7 @@
     "imobiliariamatsui": {
       "enabled": true,
       "base_url": "https://imobiliariamatsui.com.br",
-      "query_str": "imoveis?codigo=&operacao=Locação&tipo[]=Casa&cidadebairro[]=Americana/SP&cidadebairro[]=Santa%20Bárbara%20D%27Oeste/SP&valorMinimo=&valorMaximo=&areatotal[]=&areatotal[]=&page",
+      "query_str": "imoveis?codigo=&operacao=Locação&tipo[]=Casa&cidadebairro[]=Americana/SP&cidadebairro[]=Santa%20Bárbara%20D%27Oeste/SP&page",
       "start_page": 0,
       "prepend_base_url_in_search": true,
       "result_search_string": "imovel/",
@@ -129,7 +129,7 @@
     "tortamanoimoveis": {
       "enabled": true,
       "base_url": "http://tortamanoimoveis.com.br",
-      "query_str": "imoveis?codigo=&operacao=Locação&tipo[]=Casa&cidadebairro[]=Americana/SP&cidadebairro[]=Santa%20Bárbara%20D%27Oeste/SP&valorMinimo=&valorMaximo=&areatotal[]=&areatotal[]=&page",
+      "query_str": "imoveis?codigo=&operacao=Locação&tipo[]=Casa&cidadebairro[]=Americana/SP&cidadebairro[]=Santa%20Bárbara%20D%27Oeste/SP&page",
       "start_page": 0,
       "prepend_base_url_in_search": true,
       "result_search_string": "imovel/",
@@ -138,7 +138,7 @@
     "arbix": {
       "enabled": true,
       "base_url": "https://www.arbix.com.br",
-      "query_str": "pesquisa-de-imoveis/locacao_venda=L&id_cidade[]=2&id_cidade[]=5&id_tipo_imovel[]=10&id_tipo_imovel[]=12&id_tipo_imovel[]=13&finalidade=residencial&dormitorio=0&garagem=0&vmi=&vma=&&pag",
+      "query_str": "pesquisa-de-imoveis/locacao_venda=L&id_cidade[]=2&id_cidade[]=5&id_tipo_imovel[]=10&id_tipo_imovel[]=12&id_tipo_imovel[]=13&finalidade=residencial&dormitorio=0&garagem=0&pag",
       "start_page": 1,
       "result_search_string": "alugar/",
       "charset": "iso-8859-1",
