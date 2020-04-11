@@ -197,7 +197,7 @@
       "method": "two"
     },
     "allianceimoveis": {
-      "enabled": false,
+      "enabled": true,
       "base_url": "http://www.allianceimoveis.com",
       "query_str": "index/buscaavancada/finalidade/2/tipo/9/cidade/13/max/2400/",
       "start_page": 0,
@@ -208,7 +208,7 @@
       "method": "two"
     },
     "imobiliariacamargo": {
-      "enabled": false,
+      "enabled": true,
       "base_url": "https://imobiliariacamargo.com.br",
       "query_str": "imoveis/alugar/casa/null/sp/americana/null?valor=1200-2400&ordenar=valorImovel&page",
       "start_page": 0,
@@ -217,7 +217,7 @@
       "method": "two"
     },
     "imoveiscontato": {
-      "enabled": false,
+      "enabled": true,
       "base_url": "http://imoveiscontato.com.br",
       "query_str": "imoveis?codigo=&operacao=Loca%C3%A7%C3%A3o&tipo[]=Casa&cidadebairro[]=Americana/SP&valorMinimo=R$%201.200,00&valorMaximo=R$%202.400,00&areatotal[]=&areatotal[]=&page",
       "start_page": 0,
@@ -226,7 +226,7 @@
       "method": "two"
     },
     "roganoimoveis": {
-      "enabled": false,
+      "enabled": true,
       "base_url": "https://www.roganoimoveis.com.br",
       "query_str": "imoveis?codigo=&operacao=Loca%C3%A7%C3%A3o&tipo[]=Ch%C3%A1cara&tipo[]=Casa&cidadebairro[]=Americana/SP&cidadebairro[]=Santa%20B%C3%A1rbara%20D%27Oeste/SP&valorMinimo=R$%201.200,00&valorMaximo=R$%202.400,00&areatotal[]=&areatotal[]=&page",
       "start_page": 0,
@@ -235,7 +235,7 @@
       "method": "two"
     },
     "imobiliariasalves": {
-      "enabled": false,
+      "enabled": true,
       "base_url": "https://imobiliariasalves.com.br",
       "query_str": "/imoveis/alugar/casa/null/sp/americana/null?page",
       "start_page": 0,
