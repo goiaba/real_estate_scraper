@@ -8,6 +8,7 @@ from urllib.parse import urljoin
 from . import get_config
 
 logger = logging.getLogger("real_estate_scraper")
+requests.packages.urllib3.disable_warnings()
 
 
 def method_none(a_name, a_data):
@@ -92,7 +93,7 @@ def method_two(a_name, a_data):
         if pagination:
             url = "%s%s%i" % (url, page_param_separator, page)
         logger.debug("Requesting '%s'" % url)
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, verify=False)
         html = response.content.decode(charset)
         tree = etree.parse(StringIO(html), parser=parser)
         refs = tree.xpath("//a")
