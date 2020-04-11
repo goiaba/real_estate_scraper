@@ -33,6 +33,8 @@ def get_house_links():
             for k, v in get_config("agencies").items()
             if v.get("enabled", False)
         }
+        logger.info("Total agencies enabled to be scraped: %i",
+                    len(agencies.keys()))
         futures = {
             executor.submit(
                 method_dispatcher.get(a_data.get("method", "none"),
