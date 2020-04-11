@@ -67,6 +67,22 @@
       "result_list_name": "data",
       "method": "one"
     },
+    "redeimoveisamericana": {
+      "enabled": true,
+      "base_url": "https://www.redeimoveisamericana.com.br",
+      "query_str": "api/listings/para-alugar/casa+chacara/americana+santa-barbara-d-oeste?preco-de-locacao=1200~2400&pagina",
+      "start_page": 1,
+      "result_list_name": "data",
+      "method": "one"
+    },
+    "villaimoveisamericana": {
+      "enabled": true,
+      "base_url": "https://www.villaimoveisamericana.com.br",
+      "query_str": "api/listings/para-alugar/casa+chacara/americana+santa-barbara-d-oeste?preco-de-locacao=1200~2400&pagina",
+      "start_page": 1,
+      "result_list_name": "data",
+      "method": "one"
+    },
     "bispoimovel": {
       "enabled": true,
       "base_url": "http://www.bispoimovel.com.br",
@@ -178,6 +194,62 @@
       "result_search_string": "/imovel/",
       "pagination": false,
       "prepend_base_url_in_search": true,
+      "method": "two"
+    },
+    "allianceimoveis": {
+      "enabled": false,
+      "base_url": "http://www.allianceimoveis.com",
+      "query_str": "index/buscaavancada/finalidade/2/tipo/9/cidade/13/max/2400/",
+      "start_page": 0,
+      "result_search_string": "/imovel/",
+      "pagination": false,
+      "prepend_base_url_in_search": true,
+      "charset": "ISO-8859-1",
+      "method": "two"
+    },
+    "imobiliariacamargo": {
+      "enabled": false,
+      "base_url": "https://imobiliariacamargo.com.br",
+      "query_str": "imoveis/alugar/casa/null/sp/americana/null?valor=1200-2400&ordenar=valorImovel&page",
+      "start_page": 0,
+      "result_search_string": "/imovel/",
+      "prepend_base_url_in_search": true,
+      "method": "two"
+    },
+    "imoveiscontato": {
+      "enabled": false,
+      "base_url": "http://imoveiscontato.com.br",
+      "query_str": "imoveis?codigo=&operacao=Loca%C3%A7%C3%A3o&tipo[]=Casa&cidadebairro[]=Americana/SP&valorMinimo=R$%201.200,00&valorMaximo=R$%202.400,00&areatotal[]=&areatotal[]=&page",
+      "start_page": 0,
+      "result_search_string": "/imovel/",
+      "prepend_base_url_in_search": true,
+      "method": "two"
+    },
+    "roganoimoveis": {
+      "enabled": false,
+      "base_url": "https://www.roganoimoveis.com.br",
+      "query_str": "imoveis?codigo=&operacao=Loca%C3%A7%C3%A3o&tipo[]=Ch%C3%A1cara&tipo[]=Casa&cidadebairro[]=Americana/SP&cidadebairro[]=Santa%20B%C3%A1rbara%20D%27Oeste/SP&valorMinimo=R$%201.200,00&valorMaximo=R$%202.400,00&areatotal[]=&areatotal[]=&page",
+      "start_page": 0,
+      "result_search_string": "/imovel/",
+      "prepend_base_url_in_search": true,
+      "method": "two"
+    },
+    "imobiliariasalves": {
+      "enabled": false,
+      "base_url": "https://imobiliariasalves.com.br",
+      "query_str": "/imoveis/alugar/casa/null/sp/americana/null?page",
+      "start_page": 0,
+      "result_search_string": "/imovel/",
+      "prepend_base_url_in_search": true,
+      "method": "two"
+    },
+    "domaimobiliaria": {
+      "enabled": true,
+      "base_url": "http://domaimobiliaria.com.br",
+      "query_str": "imoveis/para-alugar/casa+chacara/americana+santa-barbara-d-oeste?preco-de-locacao=1200~2400",
+      "start_page": 0,
+      "result_search_string": "/imovel/",
+      "pagination": false,
       "method": "two"
     },
     "armond": {
