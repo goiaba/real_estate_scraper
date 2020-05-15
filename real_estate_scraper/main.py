@@ -84,7 +84,7 @@ def log_ignored_agencies(house_links: dict, previous_house_links: dict):
 
 
 def filter_added_house_links(house_links: dict,
-                             previous_house_links: dict) -> set:
+                             previous_house_links: dict) -> list:
     added_house_links = set([])
     agencies = set(house_links.keys()).intersection(
         set(previous_house_links.keys()))
@@ -93,11 +93,11 @@ def filter_added_house_links(house_links: dict,
         added_house_links.update(
             set(house_links.get(a_name)).difference(
                 set(previous_house_links.get(a_name))))
-    return added_house_links
+    return sorted(added_house_links)
 
 
 def filter_removed_house_links(house_links: dict,
-                               previous_house_links: dict) -> set:
+                               previous_house_links: dict) -> list:
     removed_house_links = set([])
     agencies = set(house_links.keys()).intersection(
         set(previous_house_links.keys()))
@@ -106,7 +106,7 @@ def filter_removed_house_links(house_links: dict,
         removed_house_links.update(
             set(previous_house_links.get(a_name)).difference(
                 house_links.get(a_name)))
-    return removed_house_links
+    return sorted(removed_house_links)
 
 
 if __name__ == "__main__":
