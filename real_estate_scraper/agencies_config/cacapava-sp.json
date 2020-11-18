@@ -14,7 +14,7 @@
     "imobnunes": {
       "enabled": true,
       "base_url": "https://imobnunes.com.br",
-      "query_str": "imóveis/page/${page}/?filter-location=41&filter-property-type=35&filter-status=74&filter-price-from=1500&filter-price-to=3000",
+      "query_str": "imóveis/page/${page}/?filter-location=41&filter-property-type=35&filter-status=74&filter-price-from=${min_price}&filter-price-to=${max_price}",
       "start_page": 1,
       "result_search_string": "/imóveis/",
       "prepend_base_url_in_search": true,
@@ -24,7 +24,7 @@
     "feliximoveisespeciais": {
       "enabled": true,
       "base_url": "https://www.feliximoveisespeciais.com",
-      "query_str": "imoveis/para-alugar/casa/cacapava?preco-de-locacao=1500~3000&pagina=${page}",
+      "query_str": "imoveis/para-alugar/casa/cacapava?preco-de-locacao=${min_price}~${max_price}&pagina=${page}",
       "start_page": 1,
       "result_search_string": "/imovel/",
       "link_xpath": "//div[contains(@class, 'card-listing')]/a",
@@ -33,7 +33,7 @@
     "spimob": {
       "enabled": true,
       "base_url": "https://www.spimob.com.br",
-      "query_str": "imoveis/para-alugar/casa/cacapava?preco-de-locacao=1500~3000?pagina=",
+      "query_str": "imoveis/para-alugar/casa/cacapava?preco-de-locacao=${min_price}~${max_price}?pagina=",
       "start_page": 1,
       "result_search_string": "/imovel/",
       "link_xpath": "//div[contains(@class, 'card-listing')]/a",
@@ -42,7 +42,7 @@
     "teleregina": {
       "enabled": true,
       "base_url": "https://teleregina.com.br",
-      "query_str": "busca?estado%5B%5D=4&cidade%5B%5D=1085&valor-min=1.500%2C00&valor-max=3.000%2C00&operacao=locacao&tipo-imovel%5B%5D=55&dormitorios%5B%5D=&area-min=&area-max=&page=${page}",
+      "query_str": "busca?estado%5B%5D=4&cidade%5B%5D=1085&valor-min=${min_price}%2C00&valor-max=${max_price}%2C00&operacao=locacao&tipo-imovel%5B%5D=55&dormitorios%5B%5D=&area-min=&area-max=&page=${page}",
       "start_page": 1,
       "result_search_string": "/imovel/",
       "prepend_base_url_in_search": true,
@@ -52,7 +52,7 @@
     "icasaimob": {
       "enabled": true,
       "base_url": "https://www.icasaimob.com.br",
-      "query_str": "imoveis/para-alugar/casa/cacapava?preco-de-locacao=1500~3000&pagina=${page}",
+      "query_str": "imoveis/para-alugar/casa/cacapava?preco-de-locacao=${min_price}~${max_price}&pagina=${page}",
       "start_page": 1,
       "result_search_string": "/imovel/",
       "link_xpath": "//div[contains(@class, 'card-listing')]/a",
@@ -61,7 +61,7 @@
     "harmonyimoveis": {
       "enabled": true,
       "base_url": "https://www.harmonyimoveis.com.br",
-      "query_str": "imoveis/para-alugar/casa/cacapava?preco-de-locacao=1500~3000&pagina=${page}",
+      "query_str": "imoveis/para-alugar/casa/cacapava?preco-de-locacao=${min_price}~${max_price}&pagina=${page}",
       "start_page": 1,
       "result_search_string": "/imovel/",
       "link_xpath": "//div[contains(@class, 'card-listing')]/a",
@@ -70,7 +70,7 @@
     "solucaoimoveiscpv": {
       "enabled": true,
       "base_url": "http://solucaoimoveiscpv.com.br",
-      "query_str": "?business_type=1&property_type=1&uf=35&city=3508504&min=1.500%2C00&max=3.000%2C00&page=${page}",
+      "query_str": "?business_type=1&property_type=1&uf=35&city=3508504&min=${min_price}%2C00&max=${max_price}%2C00&page=${page}",
       "start_page": 1,
       "result_search_string": "/detalhes/",
       "prepend_base_url_in_search": true,
@@ -80,7 +80,7 @@
     "imobiliariajs": {
       "enabled": true,
       "base_url": "https://www.imobiliariajs.com",
-      "query_str": "imoveis/para-alugar/casa/cacapava?preco-de-locacao=1500~3000&pagina=${page}",
+      "query_str": "imoveis/para-alugar/casa/cacapava?preco-de-locacao=${min_price}~${max_price}&pagina=${page}",
       "start_page": 1,
       "result_search_string": "/imovel/",
       "link_xpath": "//div[contains(@class, 'card-listing')]/a",
@@ -89,7 +89,7 @@
     "carbogninimoveis": {
       "enabled": true,
       "base_url": "https://www.carbogninimoveis.com.br",
-      "query_str": "alugar/sp/cacapava/casa/valor-1500_3000/pagina-${page}/",
+      "query_str": "alugar/sp/cacapava/casa/valor-${min_price}_${max_price}/pagina-${page}/",
       "start_page": 1,
       "result_search_string": "/",
       "link_xpath": "//div[contains(@class, 'resultado')]/div[contains(@class, 'foto')]/a",
