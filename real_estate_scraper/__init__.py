@@ -10,7 +10,7 @@ def path_from_root_project_dir(filename):
 
 
 def load_config():
-    config_file = path_from_root_project_dir(("config.json"))
+    config_file = path_from_root_project_dir("config.json")
     with open(config_file, 'r') as file:
         return json.load(file)
 

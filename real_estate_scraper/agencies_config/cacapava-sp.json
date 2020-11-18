@@ -1,0 +1,111 @@
+{
+  "id": "cacapava-sp",
+  "name": "Caçapava",
+  "description": "Monitora imóveis para locação em Caçapava",
+  "agencies": {
+    "imobiliariadiniz": {
+      "enabled": true,
+      "base_url": "https://www.imobiliariadiniz.com/",
+      "query_str": "imoveis_listagem.php?neg=locacao&tipo=2&cidade_id=4802&pagina=${page}",
+      "start_page": 0,
+      "result_search_string": "imoveis_detalhes.php?id=",
+      "method": "two"
+    },
+    "imobnunes": {
+      "enabled": true,
+      "base_url": "https://imobnunes.com.br",
+      "query_str": "imóveis/page/${page}/?filter-location=41&filter-property-type=35&filter-status=74&filter-price-from=1500&filter-price-to=3000",
+      "start_page": 1,
+      "result_search_string": "/imóveis/",
+      "prepend_base_url_in_search": true,
+      "link_xpath": "//article[contains(@class, 'property-row')]/a",
+      "method": "two"
+    },
+    "feliximoveisespeciais": {
+      "enabled": true,
+      "base_url": "https://www.feliximoveisespeciais.com",
+      "query_str": "imoveis/para-alugar/casa/cacapava?preco-de-locacao=1500~3000&pagina=${page}",
+      "start_page": 1,
+      "result_search_string": "/imovel/",
+      "link_xpath": "//div[contains(@class, 'card-listing')]/a",
+      "method": "two"
+    },
+    "spimob": {
+      "enabled": true,
+      "base_url": "https://www.spimob.com.br",
+      "query_str": "imoveis/para-alugar/casa/cacapava?preco-de-locacao=1500~3000?pagina=",
+      "start_page": 1,
+      "result_search_string": "/imovel/",
+      "link_xpath": "//div[contains(@class, 'card-listing')]/a",
+      "method": "two"
+    },
+    "teleregina": {
+      "enabled": true,
+      "base_url": "https://teleregina.com.br",
+      "query_str": "busca?estado%5B%5D=4&cidade%5B%5D=1085&valor-min=1.500%2C00&valor-max=3.000%2C00&operacao=locacao&tipo-imovel%5B%5D=55&dormitorios%5B%5D=&area-min=&area-max=&page=${page}",
+      "start_page": 1,
+      "result_search_string": "/imovel/",
+      "prepend_base_url_in_search": true,
+      "link_xpath": "//div[contains(@class, 'box-imovel-resultado')]/a",
+      "method": "two"
+    },
+    "icasaimob": {
+      "enabled": true,
+      "base_url": "https://www.icasaimob.com.br",
+      "query_str": "imoveis/para-alugar/casa/cacapava?preco-de-locacao=1500~3000&pagina=${page}",
+      "start_page": 1,
+      "result_search_string": "/imovel/",
+      "link_xpath": "//div[contains(@class, 'card-listing')]/a",
+      "method": "two"
+    },
+    "harmonyimoveis": {
+      "enabled": true,
+      "base_url": "https://www.harmonyimoveis.com.br",
+      "query_str": "imoveis/para-alugar/casa/cacapava?preco-de-locacao=1500~3000&pagina=${page}",
+      "start_page": 1,
+      "result_search_string": "/imovel/",
+      "link_xpath": "//div[contains(@class, 'card-listing')]/a",
+      "method": "two"
+    },
+    "solucaoimoveiscpv": {
+      "enabled": true,
+      "base_url": "http://solucaoimoveiscpv.com.br",
+      "query_str": "?business_type=1&property_type=1&uf=35&city=3508504&min=1.500%2C00&max=3.000%2C00&page=${page}",
+      "start_page": 1,
+      "result_search_string": "/detalhes/",
+      "prepend_base_url_in_search": true,
+      "link_xpath": "//div[contains(@class, 'jumbotron-contents')]/p/a",
+      "method": "two"
+    },
+    "imobiliariajs": {
+      "enabled": true,
+      "base_url": "https://www.imobiliariajs.com",
+      "query_str": "imoveis/para-alugar/casa/cacapava?preco-de-locacao=1500~3000&pagina=${page}",
+      "start_page": 1,
+      "result_search_string": "/imovel/",
+      "link_xpath": "//div[contains(@class, 'card-listing')]/a",
+      "method": "two"
+    },
+    "carbogninimoveis": {
+      "enabled": true,
+      "base_url": "https://www.carbogninimoveis.com.br",
+      "query_str": "alugar/sp/cacapava/casa/valor-1500_3000/pagina-${page}/",
+      "start_page": 1,
+      "result_search_string": "/",
+      "link_xpath": "//div[contains(@class, 'resultado')]/div[contains(@class, 'foto')]/a",
+      "method": "two"
+    },
+    "redeimobiliariabrasil": {
+      "enabled": true,
+      "base_url": "https://www.redeimobiliariabrasil.com",
+      "query_str": "imobiliaria/locacao/cacapava/casa-casa-em-condominio-sobrado/imoveis/14715/${page}",
+      "start_page": 1,
+      "prepend_base_url_in_search": true,
+      "result_search_string": "/",
+      "link_xpath": "//article[contains(@class, 'c49-property-card')]/div[@class='c49-property-card_photo']/div[contains(@class,'c49-property-card_slide')]/div[@class='carousel-inner']/div[contains(@class,'carousel-item')]/div[@class='c49-carousel-photo-wrap']/a",
+      "base64_searches": "W3siaW5wdXQiOiJ0aXBvIiwidmFsdWUiOiIyIiwidGFibGUiOiJ0X2kifSx7ImlucHV0IjoiaWRjaWRhZGUiLCJ2YWx1ZSI6IjE0MjciLCJ0YWJsZSI6ImkifSx7ImlucHV0IjoiY2F0ZWdvcmlhIiwidmFsdWUiOlsiOTkiLCI1MSIsIjg3IiwiMTAxIl0sInRhYmxlIjoiaSJ9LHsiaW5wdXQiOiJ2YWxvcl92YWxvciIsInZhbHVlIjp7InZhbG9yX21pbmltbyI6IjE1MDAuMDAiLCJ2YWxvcl9tYXhpbW8iOiIzMDAwLjAwIn0sInRhYmxlIjoidmwiLCJ0eXBlIjoyfV0=",
+      "search_url": "https://www.redeimobiliariabrasil.com/php/search-base64.php",
+      "method": "two"
+    }
+  }
+}
