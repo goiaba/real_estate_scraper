@@ -4,7 +4,7 @@ from datetime import datetime
 import concurrent.futures
 import os
 import json
-from . import get_config
+from . import get_config, path_from_root_project_dir
 from .utils import read_from_disk, write_to_disk
 from .utils import send_email, to_view_date_format
 from .scrapers import method_none, method_one, method_two
@@ -127,7 +127,7 @@ if __name__ == "__main__":
     agencies_conf = get_config("conf:agencies")
     for file in map(lambda e: os.path.join(agencies_conf.get("config_directory"), e),
                     agencies_conf.get("files")):
-        handle_agencies(file)
+        handle_agencies(path_from_root_project_dir(file))
     end_time = datetime.now()
     spent_time = end_time - current_check_time
     logger.info("Real estate scraper execution ended at %s (%s)",
