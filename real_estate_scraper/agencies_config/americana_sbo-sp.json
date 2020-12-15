@@ -70,7 +70,7 @@
     "bispoimovel": {
       "enabled": true,
       "base_url": "http://www.bispoimovel.com.br",
-      "query_str": "imoveis/para-alugar/casa/americana+santa-barbara-d-oeste?pagina=${page}",
+      "query_str": "imoveis/para-alugar/casa/americana+santa-barbara-d-oeste?preco-de-locacao=${min_price}~${max_price}&pagina=${page}",
       "start_page": 1,
       "result_search_string": "/imovel/",
       "link_xpath": "//div[contains(@class, 'listing-results')]/div/div[contains(@class, 'card-listing')]/a",
@@ -79,7 +79,7 @@
     "imobiliariaurbes": {
       "enabled": true,
       "base_url": "https://www.imobiliariaurbes.com.br",
-      "query_str": "imoveis/para-alugar/casa/americana+santa-barbara-d-oeste?pagina=${page}",
+      "query_str": "imoveis/para-alugar/casa/americana+santa-barbara-d-oeste?preco-de-locacao=${min_price}~${max_price}&pagina=${page}",
       "start_page": 1,
       "result_search_string": "/imovel/",
       "method": "two"
@@ -87,7 +87,7 @@
     "imobiliariaimperium": {
       "enabled": true,
       "base_url": "https://www.imobiliariaimperium.com.br",
-      "query_str": "imoveis/para-alugar/casa/americana+santa-barbara-d-oeste?pagina=${page}",
+      "query_str": "imoveis/para-alugar/casa/americana+santa-barbara-d-oeste?preco-de-locacao=${min_price}~${max_price}&pagina=${page}",
       "start_page": 1,
       "result_search_string": "/imovel/",
       "method": "two"
@@ -95,7 +95,7 @@
     "afortalezaimoveis": {
       "enabled": true,
       "base_url": "http://www.afortalezaimoveis.com.br",
-      "query_str": "imoveis/para-alugar/casa/americana+santa-barbara-d-oeste?pagina=${page}",
+      "query_str": "imoveis/para-alugar/casa/americana+santa-barbara-d-oeste?preco-de-locacao=${min_price}~${max_price}&pagina=${page}",
       "start_page": 1,
       "result_search_string": "/imovel/",
       "method": "two"
@@ -103,7 +103,7 @@
     "messiasimoveis": {
       "enabled": true,
       "base_url": "http://messiasimoveis.net",
-      "query_str": "imoveis/alugar/casa/null/sp/americana-santa+barbara+d%27oeste/null?page=${page}",
+      "query_str": "imoveis/alugar/casa/null/sp/americana-santa+barbara+d%27oeste/null?valor=${min_price}-${max_price}&page=${page}",
       "start_page": 0,
       "prepend_base_url_in_search": true,
       "result_search_string": "imovel/",
@@ -112,7 +112,7 @@
     "boldrini": {
       "enabled": true,
       "base_url": "https://boldrini.net.br",
-      "query_str": "imoveis/alugar/casa/null/sp/americana-santa+barbara+d%27oeste/null?page=${page}",
+      "query_str": "imoveis/alugar/casa/null/sp/americana-santa+barbara+d%27oeste/null?valor=${min_price}-${max_price}&page=${page}",
       "start_page": 0,
       "prepend_base_url_in_search": true,
       "result_search_string": "imovel/",
@@ -121,7 +121,7 @@
     "imobiliariamatsui": {
       "enabled": true,
       "base_url": "https://imobiliariamatsui.com.br",
-      "query_str": "imoveis?codigo=&operacao=Locação&tipo[]=Casa&cidadebairro[]=Americana/SP&cidadebairro[]=Santa%20Bárbara%20D%27Oeste/SP&page=${page}",
+      "query_str": "imoveis?codigo=&operacao=Locação&tipo[]=Casa&cidadebairro[]=Americana/SP&cidadebairro[]=Santa%20Bárbara%20D%27Oeste/SP&valorMinimo=${min_price}&valorMaximo=${max_price}&page=${page}",
       "start_page": 0,
       "prepend_base_url_in_search": true,
       "result_search_string": "imovel/",
@@ -130,7 +130,7 @@
     "tortamanoimoveis": {
       "enabled": true,
       "base_url": "http://tortamanoimoveis.com.br",
-      "query_str": "imoveis?codigo=&operacao=Locação&tipo[]=Casa&cidadebairro[]=Americana/SP&cidadebairro[]=Santa%20Bárbara%20D%27Oeste/SP&page=${page}",
+      "query_str": "imoveis?codigo=&operacao=Locação&tipo[]=Casa&cidadebairro[]=Americana/SP&cidadebairro[]=Santa%20Bárbara%20D%27Oeste/SP&valorMinimo=${min_price}&valorMaximo=${max_price}&page=${page}",
       "start_page": 0,
       "prepend_base_url_in_search": true,
       "result_search_string": "imovel/",
@@ -139,7 +139,7 @@
     "arbix": {
       "enabled": true,
       "base_url": "https://www.arbix.com.br",
-      "query_str": "pesquisa-de-imoveis/locacao_venda=L&id_cidade[]=2&id_cidade[]=5&id_tipo_imovel[]=10&id_tipo_imovel[]=12&id_tipo_imovel[]=13&finalidade=residencial&dormitorio=0&garagem=0&pag=${page}",
+      "query_str": "pesquisa-de-imoveis/locacao_venda=L&id_cidade[]=2&id_cidade[]=5&id_tipo_imovel[]=10&id_tipo_imovel[]=12&id_tipo_imovel[]=13&finalidade=residencial&dormitorio=0&garagem=0&vmi=${min_price}&vma=${max_price}&pag=${page}",
       "start_page": 1,
       "result_search_string": "alugar/",
       "charset": "iso-8859-1",
@@ -148,7 +148,7 @@
     "aresimoveis": {
       "enabled": true,
       "base_url": "https://www.aresimoveis.com.br",
-      "query_str": "alugar/sp/santa-barbara-d'oeste_americana/casa/valor-min_${min_price}/area-min_0/ordem-valor/resultado-crescente/quantidade-12/pagina=${page}",
+      "query_str": "alugar/sp/santa-barbara-d'oeste_americana/casa/valor-${min_price}_${max_price}/area-min_0/ordem-valor/resultado-crescente/quantidade-12/pagina-${page}",
       "start_page": 1,
       "result_search_string": "/alugar/sp/americana,/alugar/sp/santa-barbara-doeste",
       "method": "two"
@@ -156,7 +156,7 @@
     "imobiliariasaobernardo": {
       "enabled": true,
       "base_url": "https://www.imobiliariasaobernardo.com.br",
-      "query_str": "imoveis?operacao=Loca%C3%A7%C3%A3o&tipo%5B%5D=Casa&cidadebairro%5B%5D=Americana%2FSP&cidadebairro%5B%5D=Santa+B%C3%A1rbara+D%27Oeste%2FSP&page=${page}",
+      "query_str": "imoveis?operacao=Loca%C3%A7%C3%A3o&tipo%5B%5D=Casa&cidadebairro%5B%5D=Americana%2FSP&cidadebairro%5B%5D=Santa+B%C3%A1rbara+D%27Oeste%2FSP&valorMinimo=${min_price}&valorMaximo=${max_price}&page=${page}",
       "start_page": 0,
       "prepend_base_url_in_search": true,
       "result_search_string": "/imovel/",
@@ -165,7 +165,7 @@
     "portosegimoveis-americana": {
       "enabled": true,
       "base_url": "https://www.portosegimoveis.com.br",
-      "query_str": "search.html?pretensao=alugar&cidade=Americana&tipo=Casa&formulario=param",
+      "query_str": "search.html?pretensao=alugar&cidade=Americana&tipo=Casa&formulario=param&valor_min=${min_price}&valor_max=${max_price}",
       "result_search_string": "/imovel/",
       "pagination": false,
       "prepend_base_url_in_search": true,
@@ -174,7 +174,7 @@
     "portosegimoveis-sbo": {
       "enabled": true,
       "base_url": "https://www.portosegimoveis.com.br",
-      "query_str": "search.html?pretensao=alugar&cidade=Santa+Bárbara+D%5C%27Oeste&tipo=Casa&formulario=param",
+      "query_str": "search.html?pretensao=alugar&cidade=Santa+Bárbara+D%5C%27Oeste&tipo=Casa&formulario=param&valor_min=${min_price}&valor_max=${max_price}",
       "result_search_string": "/imovel/",
       "pagination": false,
       "prepend_base_url_in_search": true,
@@ -183,7 +183,7 @@
     "allianceimoveis": {
       "enabled": true,
       "base_url": "http://www.allianceimoveis.com",
-      "query_str": "index/buscaavancada/finalidade/2/tipo/9/cidade/13/max/${max_price}/",
+      "query_str": "index/buscaavancada/finalidade/2/tipo/9/cidade/13/min/${min_price}/max/${max_price}/",
       "start_page": 0,
       "result_search_string": "/imovel/",
       "pagination": false,
@@ -203,7 +203,7 @@
     "imoveiscontato": {
       "enabled": true,
       "base_url": "http://imoveiscontato.com.br",
-      "query_str": "imoveis?codigo=&operacao=Loca%C3%A7%C3%A3o&tipo[]=Casa&cidadebairro[]=Americana/SP&valorMinimo=R$%201.500,00&valorMaximo=R$%203.000,00&areatotal[]=&areatotal[]=&page=${page}",
+      "query_str": "imoveis?operacao=Loca%C3%A7%C3%A3o&tipo[]=Ch%C3%A1cara&tipo[]=Casa&cidadebairro[]=Americana/SP&cidadebairro[]=Santa%20B%C3%A1rbara%20D%27Oeste/SP&valorMinimo=${min_price}&valorMaximo=${max_price}&page=${page}",
       "start_page": 0,
       "result_search_string": "/imovel/",
       "prepend_base_url_in_search": true,
@@ -212,7 +212,7 @@
     "roganoimoveis": {
       "enabled": true,
       "base_url": "https://www.roganoimoveis.com.br",
-      "query_str": "imoveis?codigo=&operacao=Loca%C3%A7%C3%A3o&tipo[]=Ch%C3%A1cara&tipo[]=Casa&cidadebairro[]=Americana/SP&cidadebairro[]=Santa%20B%C3%A1rbara%20D%27Oeste/SP&valorMinimo=R$%201.500,00&valorMaximo=R$%203.000,00&areatotal[]=&areatotal[]=&page=${page}",
+      "query_str": "imoveis?operacao=Loca%C3%A7%C3%A3o&tipo[]=Ch%C3%A1cara&tipo[]=Casa&cidadebairro[]=Americana/SP&cidadebairro[]=Santa%20B%C3%A1rbara%20D%27Oeste/SP&valorMinimo=${min_price}&valorMaximo=${max_price}&page=${page}",
       "start_page": 0,
       "result_search_string": "/imovel/",
       "prepend_base_url_in_search": true,
@@ -221,7 +221,7 @@
     "imobiliariasalves": {
       "enabled": true,
       "base_url": "https://imobiliariasalves.com.br",
-      "query_str": "/imoveis/alugar/casa/null/sp/americana/null?page=${page}",
+      "query_str": "imoveis/alugar/casa/null/sp/americana/null?valor=${min_price}-${max_price}&page=${page}",
       "start_page": 0,
       "result_search_string": "/imovel/",
       "prepend_base_url_in_search": true,
@@ -239,7 +239,7 @@
     "armond": {
       "enabled": true,
       "base_url": "https://armond.com.br",
-      "query_str": "alugar/casa/americana/sp?ordenacao=crescente&finalidade=residencial&pag=${page}",
+      "query_str": "alugar/casa/americana/sp?ordenacao=crescente&finalidade=residencial&preco=${min_price}/${max_price}&pag=${page}",
       "link_xpath": "//script[@type='application/ld+json']",
       "start_page": 1,
       "pagination": true,

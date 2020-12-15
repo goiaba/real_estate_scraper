@@ -19,8 +19,8 @@
       "template_name": "atualizacao_de_imoveis.html"
     },
     "search_filter": {
-      "min_price": 1500,
-      "max_price": 3000
+      "min_price": 2000,
+      "max_price": 3500
     }
   },
   "headers": {

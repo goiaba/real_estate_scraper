@@ -5,8 +5,8 @@
   "agencies": {
     "imobiliariadiniz": {
       "enabled": true,
-      "base_url": "https://www.imobiliariadiniz.com/",
-      "query_str": "imoveis_listagem.php?neg=locacao&tipo=2&cidade_id=4802&pagina=${page}",
+      "base_url": "https://www.imobiliariadiniz.com",
+      "query_str": "imoveis_listagem.php?neg=locacao&tipo=2&cidade_id=4802&valor=${min_price}-${max_price}&pagina=${page}",
       "start_page": 0,
       "result_search_string": "imoveis_detalhes.php?id=",
       "method": "two"
@@ -70,7 +70,7 @@
     "solucaoimoveiscpv": {
       "enabled": true,
       "base_url": "http://solucaoimoveiscpv.com.br",
-      "query_str": "?business_type=1&property_type=1&uf=35&city=3508504&min=${min_price}%2C00&max=${max_price}%2C00&page=${page}",
+      "query_str": "?business_type=1&property_type=1&uf=35&city=3508504&min=${min_price}&max=${max_price}&page=${page}",
       "start_page": 1,
       "result_search_string": "/detalhes/",
       "prepend_base_url_in_search": true,
